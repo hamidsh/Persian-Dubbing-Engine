@@ -1,0 +1,13 @@
+.venv*/
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+models/
+projects/
+external/
+config.local.json
+.env
+*.log

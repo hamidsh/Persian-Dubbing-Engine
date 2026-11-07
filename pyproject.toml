@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "persian-dubbing-engine"
+version = "0.1.0"
+description = "Local Persian voice-first dubbing workbench"
+requires-python = ">=3.11,<3.13"
+dependencies = ["numpy>=1.26,<3", "soundfile>=0.12,<1", "httpx>=0.27,<1", "psutil>=5.9,<8"]
+[project.optional-dependencies]
+gui = ["PySide6==6.8.3"]
+asr = ["faster-whisper>=1.1,<2"]
+player = ["python-mpv>=1.0,<2"]
+dev = ["pytest>=8,<10"]
+[project.scripts]
+pde = "persian_dubbing.cli:main"
+pde-gui = "persian_dubbing.ui.app:main"
+[tool.setuptools.packages.find]
+where = ["src"]
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
